@@ -9,6 +9,7 @@ from bs4 import BeautifulSoup
 
 
 
+
 with open("index.html", "r") as file:
     src = file.read()
 
@@ -19,20 +20,8 @@ number_discounts_all_span = get_number_discounts_usecase(soup)
 
 print(number_discounts_all_span)
 
-products_all_article = soup.find_all("article", {"class": "thread--deal"})
-print(type(products_all_article))
+products_name_usecase = domain.usecase.Products_name_usecase()
+products_name = products_name_usecase(soup)
 
-for i, article in enumerate(products_all_article):
-    if 'thread--expired' in article.attrs['class']: 
-        # products_all_article.pop(i)
-        article.decompose()
-
-    else:
-        continue
-
-print(len(products_all_article))
-
-
-for t in products_all_article:
-    if not t.decomposed:
-        print(t.find("a",class_ = "thread-title--list").get('title', 'No title attribute'))
+for i in products_name:
+    print(i)
