@@ -25,3 +25,7 @@ products_name = products_name_usecase(soup)
 
 for i in products_name:
     print(i)
+
+products_price_usecase = domain.usecase.Products_price_usecase()
+products_price = products_price_usecase(soup)
+print(products_price)

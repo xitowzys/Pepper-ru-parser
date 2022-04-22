@@ -1,2 +1,3 @@
 from .Get_number_discounts_usecase import Get_number_discounts_usecase
 from .Products_name_usecase import Products_name_usecase
+from .Products_price_usecase import Products_price_usecase
