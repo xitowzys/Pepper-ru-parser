@@ -10,6 +10,7 @@ from bs4 import BeautifulSoup
 
 
 
+
 with open("index.html", "r") as file:
     src = file.read()
 
@@ -29,3 +30,7 @@ for i in products_name:
 products_price_usecase = domain.usecase.Products_price_usecase()
 products_price = products_price_usecase(soup)
 print(products_price)
+
+products_links_usecase = domain.usecase.Products_links_usecase()
+products_links = products_links_usecase(soup)
+print(products_links)
